@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen" style={{ backgroundColor: '#f8f7f6' }}>
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-6" style={{ backgroundColor: '#eebd2b' }}>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
@@ -11,13 +11,24 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Left Content */}
             <div className="flex-1 text-white">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Voiding
-              </h1>
-              <p className="text-xl md:text-2xl mb-4 opacity-95 font-light tracking-wide">
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-24 h-24 flex items-center justify-center">
+                  <Image
+                    src="/splash-logo.png"
+                    alt="Voiding App Logo"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h1 className="text-5xl md:text-6xl font-normal leading-tight font-['Georgia'] tracking-wider">
+                  Voiding
+                </h1>
+              </div>
+              <p className="text-lg md:text-xl mb-4 opacity-90 font-light tracking-[0.2em] font-['Georgia'] uppercase">
                 Clinical Bladder Diary
               </p>
-              <p className="text-lg mb-8 opacity-90 max-w-xl">
+              <p className="text-lg mb-8 opacity-90 max-w-xl font-sans">
                 Professional bladder diary app for tracking voiding patterns, hydration, and bowel movements.
                 Designed for patients and healthcare providers.
               </p>
@@ -26,27 +37,18 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"
+                  className="inline-flex items-center justify-center gap-3.5 bg-black text-white px-7 py-3.5 rounded-xl hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl border border-gray-800"
+                  style={{ minWidth: '200px' }}
                 >
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.5 4.35C4.5 3.99 4.63 3.71 4.9 3.52L13.1 11.9L4.9 20.48C4.63 20.29 4.5 20.01 4.5 19.65V4.35Z" fill="#2196F3" />
+                    <path d="M16.9 15.7L13.1 11.9L18.45 8.7L16.9 15.7ZM19.55 14.1L16.9 15.7L18.45 8.7L19.55 9.9C19.8 10.3 19.9 10.8 19.9 11.3V12.7C19.9 13.2 19.8 13.7 19.55 14.1Z" fill="#FFC107" />
+                    <path d="M13.1 11.9L4.9 3.52L16.3 9.9L13.1 11.9Z" fill="#4CAF50" />
+                    <path d="M13.1 11.9L16.3 14.1L4.9 20.48L13.1 11.9Z" fill="#F44336" />
                   </svg>
-                  <div className="text-left">
-                    <div className="text-xs opacity-80">Download on the</div>
-                    <div className="text-lg font-bold">App Store</div>
-                  </div>
-                </a>
-
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"
-                >
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                  </svg>
-                  <div className="text-left">
-                    <div className="text-xs opacity-80">Get it on</div>
-                    <div className="text-lg font-bold">Google Play</div>
+                  <div className="text-left leading-none">
+                    <div className="text-[11px] font-medium opacity-70 mb-1 uppercase tracking-widest font-sans">GET IT ON</div>
+                    <div className="text-xl font-bold tracking-tight font-sans">Google Play</div>
                   </div>
                 </a>
               </div>
@@ -55,14 +57,15 @@ export default function Home() {
             {/* Right - App Preview */}
             <div className="flex-1 flex justify-center">
               <div className="relative">
-                <div className="w-72 h-[600px] bg-white rounded-[3rem] shadow-2xl p-3 border-8 border-gray-800">
-                  <div className="w-full h-full rounded-[2.5rem] flex flex-col items-center justify-center p-8" style={{ backgroundColor: '#eebd2b' }}>
-                    {/* App Icon Preview */}
-                    <div className="w-32 h-32 bg-white rounded-3xl shadow-lg mb-6 flex items-center justify-center">
-                      <div className="text-6xl">💧</div>
-                    </div>
-                    <h2 className="text-white text-3xl font-bold mb-2">Voiding</h2>
-                    <p className="text-white text-sm opacity-90 tracking-widest">BLADDER DIARY</p>
+                <div className="w-72 h-[600px] bg-white rounded-[3rem] shadow-2xl p-3 border-8 border-gray-800 relative z-10">
+                  <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative bg-black">
+                    <Image
+                      src="/app_screenshot.png"
+                      alt="Voiding App Screenshot"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                 </div>
               </div>
@@ -136,12 +139,19 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-[#eebd2b] text-white px-10 py-4 rounded-xl font-semibold hover:bg-[#eebd2b]/90 transition-all transform hover:scale-105 shadow-lg text-lg"
+              className="inline-flex items-center justify-center gap-3.5 bg-black text-white px-7 py-3.5 rounded-xl hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl border border-gray-800"
+              style={{ minWidth: '200px' }}
             >
-              Download Now
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                <path d="M4.5 4.35C4.5 3.99 4.63 3.71 4.9 3.52L13.1 11.9L4.9 20.48C4.63 20.29 4.5 20.01 4.5 19.65V4.35Z" fill="#2196F3" />
+                <path d="M16.9 15.7L13.1 11.9L18.45 8.7L16.9 15.7ZM19.55 14.1L16.9 15.7L18.45 8.7L19.55 9.9C19.8 10.3 19.9 10.8 19.9 11.3V12.7C19.9 13.2 19.8 13.7 19.55 14.1Z" fill="#FFC107" />
+                <path d="M13.1 11.9L4.9 3.52L16.3 9.9L13.1 11.9Z" fill="#4CAF50" />
+                <path d="M13.1 11.9L16.3 14.1L4.9 20.48L13.1 11.9Z" fill="#F44336" />
               </svg>
+              <div className="text-left leading-none">
+                <div className="text-[11px] font-medium opacity-70 mb-1 uppercase tracking-widest font-sans">GET IT ON</div>
+                <div className="text-xl font-bold tracking-tight font-sans">Google Play</div>
+              </div>
             </a>
           </div>
         </div>
@@ -175,6 +185,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
+    </main >
   );
 }
